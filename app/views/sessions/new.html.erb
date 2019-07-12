@@ -1,0 +1,34 @@
+<div id="hero-holder" class="container-fluid pt-5">
+  <div class="row ">
+    <div class="col-md-5 offset-md-1 text-light">
+      <h1 class="text-light text-center chalk-font">Log In</h1>
+      <%= form_tag sessions_path, class: "mb-5" do %>
+        <div class="form-group">
+          <%= label_tag :email %>
+          <%= text_field_tag :email, nil, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :password %>
+          <%= password_field_tag :password, nil, class: 'form-control'%>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-light">
+          Log In
+        </button>
+        <button
+          class="btn btn-light">
+          <%= link_to 'Sign-up', new_user_path %>
+        </button>
+
+      <% end %>
+    </div>
+    <div class="col-md-5">
+      <div class="rounded landing-jumbotron w-100" ></div>
+      <div class="jumbotron text-center">
+        <h1 class="display-4 chalk-font">Welcome to TeachMe</h1>
+        <p class="lead chalk-font"> The easiest way to connect people through learning. Teach your skill or learn a new one everyday!</p>
+      </div>
+    </div>
+  </div>
+</div>

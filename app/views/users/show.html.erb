@@ -1,0 +1,92 @@
+<div class="section mt-5">
+  <div class="container">
+    <div class="row">
+      <!-- User Info  -->
+      <div class="col-md-6">
+        <div class="card profile-card-2">
+          <div class="card-img-block">
+            <img class="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
+          </div>
+          <div class="card-body pt-5">
+            <%= image_tag ( @user.avatar.attached? ? @user.avatar : "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Kermit_the_Frog.jpg/220px-Kermit_the_Frog.jpg" ), alt: "#{@user.full_name}'s profile image", class: 'profile' %>
+            <h5 class="card-title">
+              <%= @user.full_name %>
+            </h5>
+            <p class="card-text">
+              <%= @user.email %> | <%= @user.phone %>
+            </p>
+            <address>
+              <%= @user.address %> <br>
+              <%= @user.city %> - <%= @user.state %>, <%= @user.zip_code %>
+            </address>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'Edit Profile', edit_user_path(@user) %>
+          </div>
+        </div>
+      </div>
+      <!-- Calendar -->
+      <div class="col-md-6">
+        <div class="card profile-card-2">
+          <%= react_component "Calendar", props: {userId:@user.id} %>
+          <div class="card-footer">
+            <span class="calendar-footer"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <!-- Profiles -->
+      <div class="col-md-6">
+      <div class="card profile-card-2">
+        <h5 class="card-title text-center pt-2">Profiles</h5>
+        <div class="card-body pt-5 overflow-box">
+          <ul>
+            <% @user.profiles.each do |profile| %>
+            <ul>
+              <%= link_to profile.profile_title, profile %>
+            </ul>
+            <% end %>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <%= link_to 'New Profile', new_profile_path %>
+        </div>
+      </div>
+      </div>
+      <!-- Lessons -->
+      <div class="col-md-6">
+        <div class="card profile-card-2">
+          <h5 class="card-title text-center pt-2">Lessons</h5>
+          <div class="card-body pt-5 overflow-box">
+            <ul>
+              <% @user.lessons.each do |lesson| %>
+                <ul>
+                  <%= link_to lesson.description, lesson %>
+                </ul>
+              <% end %>
+            </ul>
+          </div>
+          <div class="card-footer">
+            <%= link_to 'Join Lesson', lessons_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <!-- Reviews -->
+      <div class="col-12">
+        <div class="card profile-card-2">
+          <h5 class="card-title text-center pt-2">Reviews</h5>
+          <div class="card-body pt-5">
+            <%= render  "reviews/index",  reviews: @my_reviews %>
+          </div>
+          <div class="card-footer">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

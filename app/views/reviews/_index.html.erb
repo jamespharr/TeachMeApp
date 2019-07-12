@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<!-- <div class="review">
+    <div>
+      <h4 class="user_name">User</h4>
+      <h4 class="lesson_name">Lesson</h4>
+      <h4 class="rating">Rating</h4>
+      <h4 class="comments">Comments</h4>
+    </div> -->
+
+  <% reviews.each do |review| %>
+    <div class="review">
+      <p class="avatar">( ͡° ͜ʖ ͡°)</p>
+      <p class="user_name"><%= review.user.full_name %></p>
+      <p class="lesson_name"><%= review.lesson.description%></p>
+      <p class="rating"><%= review.rating %></p>
+      <p class="comments"><%= review.comments %></p>
+    </div>
+  <% end %>
+<!-- </div> -->

@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 60px;
+  min-height: 100vh;
+}
+
+#hero-holder {
+  min-height: calc(100vh - 50px);
+  min-width: 100vw;
+  background-image: url(/assets/chalkboard.jpg);
+}
+
+.landing-jumbotron {
+  background-image: url(https://media.boingboing.net/wp-content/uploads/2015/05/lean.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 340px;
+}
+
+.chalk-font {
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.form-text-color {
+  color: whitesmoke;
+}
+
+.mb-2 {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.overflow-box {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.overflow-y {
+  overflow-y: hidden;
+}

@@ -1,0 +1,27 @@
+.navbar {
+  height: 6em;
+  background-color: #a63446;
+}
+
+.navbar-brand {
+  font-size: 3em;
+  padding: 15px;
+  font-family: 'Cutive', serif;
+  padding-top: 25px;
+
+  &:hover {
+    padding: 15px;
+    padding-top: 25px;
+  }
+}
+
+.navbar-nav {
+  font-size: 2em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-text{
+  font-size: 2em;
+  padding: 10px;
+  font-family: 'Montserrat', sans-serif;
+}

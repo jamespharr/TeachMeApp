@@ -1,0 +1,54 @@
+<div class="lessons-main container overflow-box overflow-y">
+  <h1><%= @lesson.description %></h1>
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @lesson.description %>
+  </p>
+
+  <p>
+    <strong>Start time:</strong>
+    <%= @lesson.start_time %>
+  </p>
+
+  <p>
+    <strong>End time:</strong>
+    <%= @lesson.end_time %>
+  </p>
+
+  <p>
+    <strong>Location:</strong>
+    <%= @lesson.location %>
+  </p>
+
+  <p>
+    <strong>Attendees number:</strong>
+    <%= @lesson.attendees_number %>
+  </p>
+
+  <p>
+    <strong>Student requirements:</strong>
+    <%= @lesson.student_requirements %>
+  </p>
+
+  <p>
+    <strong>Supplied by teacher:</strong>
+    <%= @lesson.supplied_by_teacher %>
+  </p>
+
+  <p>
+    <strong>Comments:</strong>
+    <%= @lesson.comments %>
+  </p>
+  <p>
+    <strong>Lesson Duration:
+    <%= @lesson.lesson_duration %> Minutes
+  </p>
+
+
+  <%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+  <%= link_to 'Go to Lessons', lessons_path %> |
+  <%= link_to 'Book', book_lesson_path(@lesson), :method => :post, class: 'btn btn-primary' unless @lesson.profile.user == @user %>
+  <%= link_to 'Cancel Lesson', delete_lesson_path(@lesson), :method => :delete, class: 'btn btn-danger'%>
+</div>

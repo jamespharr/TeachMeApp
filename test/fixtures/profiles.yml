@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  profile_type: MyString
+  description: MyString
+  skills: MyString
+  availability: MyString
+  education_level: MyString
+  certifications: MyString
+  user: one
+
+two:
+  profile_type: MyString
+  description: MyString
+  skills: MyString
+  availability: MyString
+  education_level: MyString
+  certifications: MyString
+  user: two

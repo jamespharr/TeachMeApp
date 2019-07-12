@@ -1,0 +1,75 @@
+<div id="hero-holder" class="container-fluid pt-5 text-light">
+  <h1 class="p-2 text-center text-light m-0 chalk-font">Profile Information</h1>
+  <div class="row">
+    <div class="col-10 offset-1 row">
+      <div class="col-md-8 order-2 order-md-1 px-0">
+        <div id="sign-up-hero"></div>
+      </div>
+
+      <%= form_with(model: user,
+        local: true,
+        class: 'col-md-4 order-1 order-md-2 p-2 text-light',
+        id: 'new-user-form') do |form| %>
+        <% if user.errors.any? %>
+          <div id="error_explanation">
+            <h2>
+              <%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:
+            </h2>
+
+            <ul>
+              <% user.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= form.label :avatar %>
+          <%= form.file_field(:avatar, class: 'form-control form-control-sm' )%>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :first_name %>
+          <%= form.text_field(:first_name, class: 'form-control form-control-sm', placeholder: 'John' )%>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :last_name %>
+          <%= form.text_field :last_name, class: 'form-control form-control-sm', placeholder: 'Doe' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :email %>
+          <%= form.text_field :email , class: 'form-control form-control-sm', placeholder: 'JohnDoe@email.com'%>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :phone %>
+          <%= form.text_field :phone, class: 'form-control form-control-sm', placeholder: '555-555-5555' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :password %>
+          <%= form.password_field :password, class: 'form-control form-control-sm', placeholder: 'Password' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :password_confirmation %>
+          <%= form.password_field :password_confirmation, class: 'form-control form-control-sm', placeholder: 'Confirm Password' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :zip_code %>
+          <%= form.text_field :zip_code, class: 'form-control form-control-sm', placeholder: 'Your Zip Code' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.submit 'Submit', class: 'btn btn-success btn-block' %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+</div>

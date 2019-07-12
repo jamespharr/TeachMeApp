@@ -1,0 +1,33 @@
+// Place all the styles related to the reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review{
+  display: grid;
+  grid-template-columns: 15em 15em 5em;
+  grid-template-rows: 5em 10em;
+  grid-template-areas: "user_info lesson_name rating" "comment comment comment";
+  border: 1px gray solid;
+}
+.avatar{
+  grid-area: user_info;
+  align-self: center;
+  justify-self: flex-start;
+  padding-left: 15px;
+}
+.user_name {
+  grid-area: user_info;
+  place-self: center;
+  padding-left: 15px;
+}
+.lesson_name {
+  grid-area: lesson_name;
+  place-self: center;
+}
+.rating {
+  grid-area: rating;
+  place-self: center;
+}
+.comment {
+  grid-area: comment;
+}

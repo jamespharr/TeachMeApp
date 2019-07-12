@@ -1,0 +1,57 @@
+<div class="teacher-profile">
+  <% if notice %>
+  <div class="alert alert-success" role="alert">
+    <p id="notice"><%= notice %></p>
+  </div>
+  <% end %>
+  <div class="row">
+
+  <div class="profile-description col-6">
+      <h5 class="chalk-font">My Teaching Profile</h5>
+    <p>
+      <strong>Profile title:</strong>
+      <%= @profile.profile_title %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @profile.description %>
+    </p>
+    <p>
+      <strong>Skills:</strong>
+      <%= @profile.skills %>
+    </p>
+    <p>
+      <strong>Education level:</strong>
+      <%= @profile.education_level %>
+    </p>
+    <p>
+      <strong>Certifications:</strong>
+      <%= @profile.certifications %>
+    </p>
+    <div>
+      <%= link_to 'Edit', edit_profile_path(@profile) %> |
+      <%= link_to 'Teach New Lesson', new_profile_lesson_path(@profile) %>
+    </div>
+  </div>
+
+  <div class="col-6 profile-lessons">
+    <h5 id="lesson-header">My Lessons</h5>
+      <div class="row">
+        <% @profile.lessons.each do |lesson| %>
+          <div class="card individual lesson col-3 mb-2" >
+                <%= image_tag ( lesson.image.attached? ? lesson.image : "https://blog.stylingandroid.com/wp-content/themes/lontano-pro/images/no-image-slide.png" ), alt: "#{lesson.description}'s lesson image", class: 'lesson image card-img-top lessons-profilepic' %>
+            <div class="card-body">
+              <h5 class="card-title"><%= lesson.description %></h5>
+              <p class="card-text">
+                Location: <%= lesson.location %>
+              </p>
+              <p class="card-text">
+                Desc: <%= lesson.description %>
+              </p>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+  </div>
+</div>
